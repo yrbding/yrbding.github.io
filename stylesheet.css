@@ -155,17 +155,22 @@ p {
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.nav-container nav {
+  min-width: 0;
 }
 
 .nav-links a {
   color: #2774AE;
   text-decoration: none;
   font-weight: 700;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.3;
   transition: color 0.3s ease;
   margin: 0;
@@ -480,7 +485,12 @@ h2.section-heading {
 
 .publication-entry papertitle {
   display: inline;
+}
+
+.publication-entry papertitle,
+.teaching-list li {
   font-size: 17px;
+  font-weight: 700;
   line-height: 1.45;
 }
 
@@ -501,6 +511,33 @@ h2.section-heading {
   font-size: 15px;
   font-weight: 600;
   margin-top: 2px;
+}
+
+/* Teaching and students */
+.teaching-section,
+.students-section {
+  padding: 0 20px 30px;
+}
+
+.teaching-section > .section-heading,
+.students-section > .section-heading {
+  margin-top: 15px;
+}
+
+.teaching-list,
+.students-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.teaching-list li,
+.students-list li {
+  margin: 8px 0;
+}
+
+.teaching-term,
+.student-term {
+  color: #555;
 }
 
 /* Subsection headings */
@@ -615,6 +652,7 @@ span.highlight {
   }
 
   .nav-links {
+    flex-wrap: nowrap;
     gap: 24px;
     overflow-x: auto;
     padding-bottom: 2px;
@@ -680,6 +718,12 @@ span.highlight {
 }
 
 @media screen and (max-width: 520px) {
+  .teaching-section,
+  .students-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
   .news-cell {
     padding-right: 16px;
     padding-left: 16px;
